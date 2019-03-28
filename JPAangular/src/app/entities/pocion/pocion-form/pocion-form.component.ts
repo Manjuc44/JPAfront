@@ -18,10 +18,6 @@ export class PocionFormComponent implements OnInit {
      imagen:'',
      esEpica: false,
    };
-
-   imagePath: any;
-   imgURL: string | ArrayBuffer;
-
   constructor(private _pocionService:PocionService,
               private http: HttpClient, private _ActivatedRoute: ActivatedRoute) {
 
@@ -49,34 +45,9 @@ export class PocionFormComponent implements OnInit {
   enviar(){
     if(this.pocion.id == 0){
       this._pocionService.crearPocion(this.pocion).subscribe(res => console.log(res));
-      console.log(this.pocion);
     }else{
       this._pocionService.updatePocion(this.pocion).subscribe(res => console.log(res));
     }
   }
-
-  preview(files) {
-    console.log("aaa");
-    if (files.length === 0) {
-      return;
-    }
-
-    const mimeType = files[0].type;
-    if (mimeType.match(/image\/*/) == null) {
-      return;
-    }
-
-    const reader = new FileReader();
-    this.imagePath = files;
-    reader.readAsDataURL(files[0]);
-    reader.onload = (_event) => {
-      this.imgURL = reader.result;
-      this.pocion.imagen = this.imgURL;
-      console.log(this.pocion);
-      
-        };
-  
-  }
-
 
 }
