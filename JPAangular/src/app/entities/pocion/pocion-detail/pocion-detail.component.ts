@@ -17,6 +17,7 @@ export class PocionDetailComponent implements OnInit {
               this._activatedRoute.params.subscribe(variable=>{
                 this._pocionService.obtenerPocion(variable['id']).subscribe((res:Pocion[])=>{
                   this.pocion=res
+                  
                 })
               })
               }

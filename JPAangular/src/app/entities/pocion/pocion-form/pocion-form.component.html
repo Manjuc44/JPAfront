@@ -15,8 +15,8 @@
         <div [hidden]="descripcion.valid || descripcion.pristine" class="alert alert-danger">Descripcion necesaria necesario</div>
       </div>
       <div class="form-check">
-          <input type="checkbox" class="form-check-input" [(ngModel)]="pocion.esEpica" name="esEpica" id="epica">
-          <label class="form-check-label" for="epica">Es épica</label>
+          <input type="checkbox" class="form-check-input" #esEpica="ngModel" [(ngModel)]="pocion.esEpica" name="esEpica" id="esEpica">
+          <label class="form-check-label" for="esEpica">Es épica</label>
           
         </div>
       
@@ -32,7 +32,7 @@
         <div class="botones">
           <button type="submit" routerLink="/pociones" class="btn btn-primary" style="margin-right: 1em">Cancelar</button>
           <button type="submit" (click)="eliminar()" class="btn btn-danger" style="margin-right: 1em" [ngClass]="{'disabled' : nuevo}">Borrar</button>
-          <button type="submit" (click)="enviar()" class="btn btn-success" style="margin-right: 1em">Enviar</button>
+          <button type="submit" (click)="enviar()" class="btn btn-success" style="margin-right: 1em" [ngClass]="{'disabled' : !descripcion.valid || !titulo.valid}">Enviar</button>
         </div>
       
 

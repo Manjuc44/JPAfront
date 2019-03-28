@@ -45,17 +45,16 @@ export class PocionFormComponent implements OnInit {
   }
   
   eliminar(){
-    this._pocionService.deletePocion(this.pocion.id).subscribe(res => console.log("eliminado correctamente"));
+    this._pocionService.deletePocion(this.pocion.id).subscribe(res => this._router.navigate(["/pociones"]));
     
   }
 
   enviar(){
     if(this.pocion.id == 0){
-      this._pocionService.crearPocion(this.pocion).subscribe(res => console.log(res));
-      this._router.navigate(["/pociones"]);
+      this._pocionService.crearPocion(this.pocion).subscribe(res => this._router.navigate(["/pociones"]));
+      
     }else{
-      this._pocionService.updatePocion(this.pocion).subscribe(res => console.log(res));
-      this._router.navigate(["/pociones"]);
+      this._pocionService.updatePocion(this.pocion).subscribe(res => this._router.navigate(["/pociones"]));
     }
   }
 

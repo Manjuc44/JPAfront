@@ -1,18 +1,18 @@
 <table class="zui-table zui-table-rounded col-md-12 table-striped" >
     <thead class="col-md-12">
         <tr>
-            <th>Imagen</th>
-            <th >Id</th>
-            <th >Titulo</th>
-            <th *ngIf="botones"><div style="float: right; margin-right: 20%">Acciones</div></th>
+            <th class="text-center">Imagen</th>
+            <th class="text-center">Id</th>
+            <th class="text-center" >Titulo</th>
+            <th class="text-center" *ngIf="botones"><div style="float: right; margin-right: 20%">Acciones</div></th>
         </tr>
     </thead>
     <tbody  style="background-color:blanchedalmond;">
         <tr *ngFor="let pocion of pociones">
-            <td><img style = "height: 15%" src="{{pocion.imagen}}"></td>
-            <td>{{pocion.id}}</td>
-            <td>{{pocion.titulo}}</td>
-            <td *ngIf="botones">
+            <td class="text-center"><img style = "height: 15%" src="{{pocion.imagen}}"></td>
+            <td class="text-center">{{pocion.id}}</td>
+            <td class="text-center">{{pocion.titulo}}</td>
+            <td class="text-center" *ngIf="botones">
                 <div  style="float: right; margin-right: 13%">
                         <button type="button" style="margin-right: 1em" class="btn btn-primary boton" routerLink="/pociones/{{pocion.id}}">Ver</button>
                         <button type="button" class="btn btn-success boton" routerLink="/pociones/crear/{{pocion.id}}">Editar</button></div>

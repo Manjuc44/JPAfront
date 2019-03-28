@@ -5,6 +5,11 @@
 
 .volver{
     position: relative;
-    top: 12em;
-    right: 5em;
+    float: right;
+    margin-top: 20%;
+}
+
+.fondete{
+    background-image: url(./../../../../assets/imgs/fondo-jumbotron.png);
+    
 }
