@@ -9,6 +9,8 @@ const routes: Routes = [
   {path:"pociones", component:PocionListComponent},
   //{path:"pociones/:id", component:PocionDetailComponent},
   {path:"pociones/crear/:id", component:PocionFormComponent},
+  {path:"pociones/:id", component:PocionDetailComponent}
+
  // {path:"pociones/editar/:id", component:PocionDetailComponent}
 ];
 
