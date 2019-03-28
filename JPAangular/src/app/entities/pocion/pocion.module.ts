@@ -6,12 +6,13 @@ import { PocionDetailComponent } from './pocion-detail/pocion-detail.component';
 import { PocionGridComponent } from './pocion-grid/pocion-grid.component';
 import { PocionListComponent } from './pocion-list/pocion-list.component';
 import { PocionFormComponent } from './pocion-form/pocion-form.component';
-
+import { FormsModule }   from '@angular/forms';
 @NgModule({
   declarations: [PocionDetailComponent, PocionGridComponent, PocionListComponent, PocionFormComponent],
   imports: [
     CommonModule,
-    PocionRoutingModule
+    PocionRoutingModule,
+    FormsModule
   ]
 })
 export class PocionModule { }
