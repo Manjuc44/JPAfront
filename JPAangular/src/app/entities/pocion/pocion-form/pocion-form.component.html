@@ -10,11 +10,11 @@
         <label for="alterEgo">Descripcion</label>
         <input type="text" class="form-control" [(ngModel)]="pocion.descripcion" name="descripcion" id="titulo" required id="alterEgo">
       </div>
-     
-      <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" [(ngModel)]="pocion.esEpica" name="esEpica" id="esEpica">
-          <label class="custom-control-label" for="defaultUnchecked">Epica</label>
-      </div>
+      <div class="form-check">
+          <input type="checkbox" class="form-check-input" [(ngModel)]="pocion.esEpica" name="esEpica" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+      
 
       <button type="submit" routerLink="/pociones" class="btn btn-primary">cancelar</button>
       <button type="submit" (click)="eliminar()" class="btn btn-danger">borrar</button>
