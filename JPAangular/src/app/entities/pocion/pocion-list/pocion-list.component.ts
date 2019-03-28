@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PocionService } from '../pocion.service';
+import { Pocion } from '../pocion.model';
 
 @Component({
   selector: 'app-pocion-list',
@@ -6,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pocion-list.component.css']
 })
 export class PocionListComponent implements OnInit {
-
-  constructor() { }
+    pociones:Pocion[];
+  constructor(private _PocionService:PocionService) {
+    this._PocionService.obtenerPociones().subscribe((res:Pocion[])=>{
+      this.pociones=res;
+    }
+    )
+   }
 
   ngOnInit() {
   }
