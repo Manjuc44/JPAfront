@@ -1,3 +1,16 @@
-<p>
-  pocion-detGGGail works!
-</p>
+<div class="jumbotron fondete">
+    <div class="row">
+      <div class="col-md-2">
+          <img src="{{pocion.imagen}}" class="fotoUp" alt="pocion">
+      </div>
+       <div class="col-md-9">
+          <h1>{{ pocion.titulo }}</h1> 
+          <p>{{ pocion.descripcion }}</p>
+          <img *ngIf="pocion.esEpica" class="img-responsive epic" src="./../../../../assets/imgs/alliance.png">
+          
+       </div>
+       <div class="col-md-1 volver">
+         <a  routerLink="/pociones" class="btn btn-success btn-theme ">Volver</a>
+      </div>     
+    </div>
+  </div>

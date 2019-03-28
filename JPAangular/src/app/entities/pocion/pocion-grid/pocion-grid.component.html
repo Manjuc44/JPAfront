@@ -6,7 +6,7 @@
           <th class="text-center" scope="col">Titulo</th>
           <th class="text-center" scope="col">Imagen</th>
           <th class="text-center" scope="col">Descripcion</th>
-          <th class="text-center" scope="col">Epica</th> 
+          <th class="text-center" scope="col">Opciones</th> 
         </tr>
       </thead>
       <tbody>
@@ -16,7 +16,7 @@
           <td class="text-center"><img class="img-responsive" style="width:3em;"src="./../../../../assets/imgs/t_01.PNG"></td>
           <td class="text-center">{{pocion.descripcion}}</td>
           <td *ngIf="botones" class="text-center">
-              <button class="btn btn-success">Ver</button>
+              <button routerLink="/pociones/{{pocion.id}}" class="btn btn-success">Ver</button>
               <button routerLink="/pociones/crear/{{pocion.id}}" class="btn btn-primary">Editar</button></td>
       </tbody>
     </table>

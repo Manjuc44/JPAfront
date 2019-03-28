@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PocionService } from '../pocion.service';
+import { PocionModule } from '../pocion.module';
+import { Pocion } from '../pocion.model';
 
 @Component({
   selector: 'app-pocion-detail',
@@ -6,8 +10,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pocion-detail.component.css']
 })
 export class PocionDetailComponent implements OnInit {
-
-  constructor() { }
+  pocion:Pocion[];
+  constructor(private _activatedRoute:ActivatedRoute,
+             private _pocionService:PocionService,
+             ) {
+              this._activatedRoute.params.subscribe(variable=>{
+                this._pocionService.obtenerPocion(variable['id']).subscribe((res:Pocion[])=>{
+                  this.pocion=res
+                })
+              })
+              }
 
   ngOnInit() {
   }
