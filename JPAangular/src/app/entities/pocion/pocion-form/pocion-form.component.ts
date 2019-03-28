@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Pocion } from '../pocion.model';
 import { PocionService } from '../pocion.service';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pocion-form',
@@ -19,13 +19,17 @@ export class PocionFormComponent implements OnInit {
      esEpica: false,
    };
 
+   nuevo = true;
+
    imagePath: any;
    imgURL: string | ArrayBuffer;
   constructor(private _pocionService:PocionService,
-              private http: HttpClient, private _ActivatedRoute: ActivatedRoute) {
+              private http: HttpClient, private _ActivatedRoute: ActivatedRoute,
+              private _router:Router) {
 
                 this._ActivatedRoute.params.subscribe(variable =>{
                   if(variable['id'] != 0){
+                    this.nuevo = false;
                     this._pocionService.obtenerPocion(variable['id']).subscribe((res:Pocion)=>{
                       this.pocion=res;
                     });
@@ -48,8 +52,10 @@ export class PocionFormComponent implements OnInit {
   enviar(){
     if(this.pocion.id == 0){
       this._pocionService.crearPocion(this.pocion).subscribe(res => console.log(res));
+      this._router.navigate(["/pociones"]);
     }else{
       this._pocionService.updatePocion(this.pocion).subscribe(res => console.log(res));
+      this._router.navigate(["/pociones"]);
     }
   }
 

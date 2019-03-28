@@ -31,7 +31,7 @@
       
         <div class="botones">
           <button type="submit" routerLink="/pociones" class="btn btn-primary" style="margin-right: 1em">Cancelar</button>
-          <button type="submit" (click)="eliminar()" class="btn btn-danger" style="margin-right: 1em">Borrar</button>
+          <button type="submit" (click)="eliminar()" class="btn btn-danger" style="margin-right: 1em" [ngClass]="{'disabled' : nuevo}">Borrar</button>
           <button type="submit" (click)="enviar()" class="btn btn-success" style="margin-right: 1em">Enviar</button>
         </div>
       

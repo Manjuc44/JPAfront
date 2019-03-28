@@ -13,6 +13,7 @@ import { FormsModule }   from '@angular/forms';
     CommonModule,
     PocionRoutingModule,
     FormsModule
-  ]
+  ],
+  exports: [PocionGridComponent]
 })
 export class PocionModule { }
