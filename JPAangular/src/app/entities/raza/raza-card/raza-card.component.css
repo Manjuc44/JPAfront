@@ -1,0 +1,43 @@
+.fondoVerde {
+    background-image: url('../../../../assets/imgs/fondo-card.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.titulin {
+    color: green;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.escudo {
+   
+    white-space: nowrap;
+    position: absolute;
+    top: 15em;
+
+    
+}
+
+
+.fotoUp {
+    position: relative;
+}
+
+
+.image-float {
+    page-break-inside: avoid;	
+    margin-top: -2em;
+    margin-bottom: 0em;
+    margin-left: 1em;
+  }
+  
+  .image-float ~ p {
+    widows: 1;
+    orphans: 1;
+  }
+  
+  .image-float > img {
+      height: auto;
+      object-fit: contain;
+  }
