@@ -8,16 +8,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td><img style = "height: 10%" src="../../../../assets/imgs/t_01.PNG"></td>
-            <td>1</td>
-            <td>Pocion de vida</td>
-            <td>
-                <div style="float: right; margin-right: 10%">
-                        <button type="button" class="btn btn-primary boton">Ver</button>
-                        <button type="button" class="btn btn-success boton">Editar</button>
-                        <button type="button" class="btn btn-danger boton">Eliminar</button></div>
+        <tr *ngFor="let pocion of pociones">
+            <td><img style = "height: 15%" src="{{pocion.imagen}}"></td>
+            <td>{{pocion.id}}</td>
+            <td>{{pocion.titulo}}</td>
+            <td *ngIf="botones">
+                <div style="float: right; margin-right: 13%">
+                        <button type="button" style="margin-right: 1em" class="btn btn-primary boton">Ver</button>
+                        <button type="button" class="btn btn-success boton">Editar</button></div>
                 </td>
         </tr>
     </tbody>
 </table>
+

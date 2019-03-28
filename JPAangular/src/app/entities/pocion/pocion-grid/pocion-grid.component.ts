@@ -8,6 +8,7 @@ import { Pocion } from '../pocion.model';
 })
 export class PocionGridComponent implements OnInit {
   @Input() pociones:Pocion[];
+  @Input() botones;
   constructor() { }
 
   ngOnInit() {
