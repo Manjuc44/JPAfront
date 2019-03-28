@@ -12,6 +12,7 @@ export class PocionListComponent implements OnInit {
   constructor(private _PocionService:PocionService) {
     this._PocionService.obtenerPociones().subscribe((res:Pocion[])=>{
       this.pociones=res;
+      console.log(this.pociones);
     }
     )
    }
