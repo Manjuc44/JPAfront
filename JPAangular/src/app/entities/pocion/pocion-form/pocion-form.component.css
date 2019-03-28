@@ -1,6 +1,5 @@
 .botones{
     float: right;
-    margin-top: 10em;
 }
 .ng-valid[required], .ng-valid.required  {
     border-left: 5px solid #42A948; /* green */
