@@ -7,6 +7,7 @@ import { PocionModule } from './entities/pocion/pocion.module';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RazaModule } from './entities/raza/raza.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     PocionModule,
-    HttpClientModule
+    HttpClientModule,
+    RazaModule
   ],
   providers: [],
   bootstrap: [AppComponent],

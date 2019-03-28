@@ -1,0 +1,30 @@
+<div class="card" style="height: 100%;
+width: 100%;">
+<div>
+ <img class="card-img-top" [src]="race.urlImagen" [alt]="race.nombre">
+   <!-- <img src={{race.urlImagen}} class="card-img-top
+fotoUp">-->
+
+<!-- <div [ngClass]="_razaService.tipoBando(race)"></div> -->
+
+    <img *ngIf="race.bando == 1" src="../../../../assets/imgs/escudos/horde.png" class="image-float
+img-responsive" width="50px" alt="image-float">
+
+    <img *ngIf="race.bando == 0" src="../../../../assets/imgs/escudos/alliance.png" class="image-float
+img-responsive" width="50px" alt="image-float">
+</div>
+    <div class="card-body fondoVerde" style="margin-top: 0%" >
+        <h5 class="card-title titulin">{{race.nombre | uppercase}}</h5>
+
+        <p class="card-text">{{race.descripcion}}</p>
+
+        <div class="text-center">
+
+            <a (click)="verRaza()" class="btn btn-success btn-theme ">Detalle</a>
+
+        </div>
+
+    </div>
+
+
+</div>
