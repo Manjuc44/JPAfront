@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Pocion } from '../pocion.model';
 
 @Component({
   selector: 'app-pocion-grid',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pocion-grid.component.css']
 })
 export class PocionGridComponent implements OnInit {
-
+  @Input() pociones:Pocion[];
   constructor() { }
 
   ngOnInit() {
